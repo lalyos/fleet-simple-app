@@ -1,0 +1,14 @@
+defaultNamespace: fleet-sample
+# targetCustomizations:
+# - name: qa
+#   clusterGroup: qa-clusters
+  # yaml:
+  #   overlays:
+  #   - localingress
+
+diff:
+  comparePatches:
+  - apiVersion: networking.k8s.io/v1beta1
+    kind: Ingress
+    operations:
+    - {"op":"replace", "path":"/spec/rules/0/hots", "value":"hpa.lvh.me"}
